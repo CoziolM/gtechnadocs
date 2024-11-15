@@ -92,7 +92,7 @@
 .articleTitle {
   margin-bottom: 0.5rem;
   transition: text-decoration 0.3s;
-  color: #1e96d3;
+  color: #1e96d3 !important;
 }
 
 .description {
