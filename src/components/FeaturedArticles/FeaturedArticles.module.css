@@ -44,7 +44,7 @@
 .cardIcon {
   width: 3vw;
   height: 3vw;
-  color: #1e96d3;
+  color: var(--ifm-color-primary);
   margin-bottom: 1rem;
 }
 
@@ -92,6 +92,7 @@
 .articleTitle {
   margin-bottom: 0.5rem;
   transition: text-decoration 0.3s;
+  color: var(--ifm-color-primary);
 }
 
 .description {
