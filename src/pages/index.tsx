@@ -9,6 +9,7 @@ import FeaturedVideos from '@site/src/components/FeaturedVideos/FeaturedVideos';
 import Heading from '@theme/Heading';
 import Button from '@site/src/components/Button/Button';
 import styles from './index.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function Support() {
   return (
