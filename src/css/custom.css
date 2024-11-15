@@ -124,3 +124,8 @@ div[role="banner"] .announcementBarCloseButton {
     font-size: 0.9em;
   }
 }
+
+.img-thumbnail {
+  border: none;
+  padding: 0;
+}
