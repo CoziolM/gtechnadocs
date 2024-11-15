@@ -48,7 +48,7 @@ const FeaturedVideos: React.FC = () => {
       <div className="container">
         <h2>Featured Videos</h2>
         <p className={clsx('subtitle', styles.subtitle)}>
-          Quick and informative video covering features and best practices
+          Quick and informative videos covering features and best practices
         </p>
         <div className={styles.viewAllLink}>
           <a href={videosLink} className={styles.link}>
