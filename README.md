@@ -1,2 +1,0 @@
-# gtechnadocs
- Tests for gtechnadocs
