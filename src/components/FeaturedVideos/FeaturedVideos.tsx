@@ -3,7 +3,6 @@ import styles from './FeaturedVideos.module.css';
 import clsx from 'clsx';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import VideoCard from './VideoCard'; // Ensure VideoCard is exported and imported correctly
 
 const videos = [
   {
@@ -27,8 +26,7 @@ const videos = [
 ];
 
 export default function FeaturedVideos(): JSX.Element {
-  // Correct: Call hooks at the top level
-  const videosLink = useBaseUrl('/videos');
+  const videosLink = useBaseUrl('/videos'); // Hook at top level
 
   return (
     <section className={styles.featuredVideos}>
@@ -53,5 +51,54 @@ export default function FeaturedVideos(): JSX.Element {
     </section>
   );
 }
+
+interface Video {
+  title: string;
+  description: string;
+  videoUrl: string;
+  posterUrl?: string;
+}
+
+interface VideoCardProps {
+  video: Video;
+}
+
+function VideoCard({ video }: VideoCardProps): JSX.Element {
+  const videoPath = useBaseUrl(video.videoUrl); // Hook at top level
+  const posterPath = useBaseUrl(video.posterUrl);
+
+  const handleOpenVideo = (): void => {
+    window.open(videoPath, '_blank');
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>): void => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      handleOpenVideo();
+    }
+  };
+
+  return (
+    <div className={styles.card}>
+      <div
+        className={styles.videoPlayer}
+        onClick={handleOpenVideo}
+        tabIndex={0}
+        onKeyPress={handleKeyPress}
+        aria-label={`Open ${video.title}`}
+      >
+        <img
+          src={posterPath}
+          alt={`Thumbnail for ${video.title}`}
+          className={styles.videoThumbnail}
+        />
+        <div className={styles.playButton}>
+          <i className="fas fa-play-circle"></i>
+        </div>
+      </div>
+      <h4 className={styles.videoTitle}>{video.title}</h4>
+    </div>
+  );
+}
+
 
 
