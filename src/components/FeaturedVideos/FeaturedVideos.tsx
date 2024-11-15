@@ -3,6 +3,7 @@ import styles from './FeaturedVideos.module.css';
 import clsx from 'clsx';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import VideoCard from './VideoCard'; // Ensure VideoCard is exported and imported correctly
 
 const videos = [
   {
@@ -26,6 +27,9 @@ const videos = [
 ];
 
 export default function FeaturedVideos(): JSX.Element {
+  // Correct: Call hooks at the top level
+  const videosLink = useBaseUrl('/videos');
+
   return (
     <section className={styles.featuredVideos}>
       <div className="container">
@@ -35,7 +39,7 @@ export default function FeaturedVideos(): JSX.Element {
         </p>
         {/* Add the link here */}
         <div className={styles.viewAllLink}>
-          <a href={useBaseUrl('/videos')} className={styles.link}>
+          <a href={videosLink} className={styles.link}>
             Watch all videos
             <i className={`fas fa-arrow-right ${styles.arrow}`}></i>
           </a>
@@ -47,52 +51,6 @@ export default function FeaturedVideos(): JSX.Element {
         </div>
       </div>
     </section>
-  );
-}
-
-interface Video {
-  title: string;
-  description: string;
-  videoUrl: string;
-  posterUrl?: string;
-}
-
-interface VideoCardProps {
-  video: Video;
-}
-
-function VideoCard({ video }: VideoCardProps): JSX.Element {
-  const handleOpenVideo = (): void => {
-    const videoPath = useBaseUrl(video.videoUrl);
-    window.open(videoPath, '_blank');
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>): void => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      handleOpenVideo();
-    }
-  };
-
-  return (
-    <div className={styles.card}>
-      <div
-        className={styles.videoPlayer}
-        onClick={handleOpenVideo}
-        tabIndex={0}
-        onKeyPress={handleKeyPress}
-        aria-label={`Open ${video.title}`}
-      >
-        <img
-          src={useBaseUrl(video.posterUrl)}
-          alt={`Thumbnail for ${video.title}`}
-          className={styles.videoThumbnail}
-        />
-        <div className={styles.playButton}>
-          <i className="fas fa-play-circle"></i>
-        </div>
-      </div>
-      <h4 className={styles.videoTitle}>{video.title}</h4>
-    </div>
   );
 }
 
