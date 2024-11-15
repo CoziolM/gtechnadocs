@@ -92,7 +92,7 @@
 .articleTitle {
   margin-bottom: 0.5rem;
   transition: text-decoration 0.3s;
-  color: var(--ifm-color-primary);
+  color: #1e96d3;
 }
 
 .description {
