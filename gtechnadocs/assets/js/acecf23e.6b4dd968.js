@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgtechnadocs=self.webpackChunkgtechnadocs||[]).push([[1903],{1912:t=>{t.exports=JSON.parse('{"blogBasePath":"/opt/tomcat/webapps/gtechnadocs/blog","blogTitle":"Blog","authorsListPath":"/opt/tomcat/webapps/gtechnadocs/blog/authors"}')}}]);

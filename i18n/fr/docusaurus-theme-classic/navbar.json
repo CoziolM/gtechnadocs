@@ -1,0 +1,30 @@
+{
+  "logo.alt": {
+    "message": "gtechnadocs",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Command Center": {
+    "message": "Command Center",
+    "description": "Navbar item with label Command Center"
+  },
+  "item.label.Modules": {
+    "message": "Modules",
+    "description": "Navbar item with label Modules"
+  },
+  "item.label.Permits": {
+    "message": "Permits",
+    "description": "Navbar item with label Permits"
+  },
+  "item.label.PlateSentry": {
+    "message": "PlateSentry",
+    "description": "Navbar item with label PlateSentry"
+  },
+  "item.label.Module 1": {
+    "message": "Module 1",
+    "description": "Navbar item with label Module 1"
+  },
+  "item.label.Module 2": {
+    "message": "Module 2",
+    "description": "Navbar item with label Module 2"
+  }
+}

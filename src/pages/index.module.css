@@ -1,0 +1,39 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 2rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.newSection {
+  padding: 2rem 0 3rem 0;
+  text-align: center;
+}
+
+/* Support.module.css */
+.supportSection {
+  background-color: #c4edf7;
+  background-image: url('/img/bg_light.png');
+  background-position: 100%;
+  background-size: cover;
+  padding: 5rem 0;
+  text-align: center;
+  color: var(--ifm-color-primary-darkest);
+}
+
+.supportSection h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
