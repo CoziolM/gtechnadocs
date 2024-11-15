@@ -1,32 +1,27 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import styles from './FeaturedVideos.module.css';
 import clsx from 'clsx';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const videos = [
   {
-    video: {
-      title: 'New Feature',
-      description: 'Watch our most popular videos covering features and best practices.',
-      videoUrl: '/videos/PrototypeRFC.mp4',
-	  posterUrl: '/videos/thumbnails/PrototypeRFC_thumbnail.png',
-    },
+    title: 'New Feature',
+    description: 'Watch our most popular videos covering features and best practices.',
+    videoUrl: '/videos/PrototypeRFC.mp4',
+    posterUrl: '/videos/thumbnails/PrototypeRFC_thumbnail.png',
   },
   {
-    video: {
-      title: 'How to get started',
-      description: 'Check out the latest video additions to our knowledge base.',
-      videoUrl: '/videos/PrototypeRFC.mp4',
-	  posterUrl: '/videos/thumbnails/howto1_play.png',
-    },
+    title: 'How to get started',
+    description: 'Check out the latest video additions to our knowledge base.',
+    videoUrl: '/videos/PrototypeRFC.mp4',
+    posterUrl: '/videos/thumbnails/howto1_play.png',
   },
   {
-    video: {
-      title: 'Product configuration',
-      description: 'Find answers to the most frequently asked questions in video format.',
-      videoUrl: '/videos/PrototypeRFC.mp4',
-	  posterUrl: '/videos/thumbnails/howto2_play.png',
-    },
+    title: 'Product configuration',
+    description: 'Find answers to the most frequently asked questions in video format.',
+    videoUrl: '/videos/PrototypeRFC.mp4',
+    posterUrl: '/videos/thumbnails/howto2_play.png',
   },
 ];
 
@@ -38,16 +33,16 @@ export default function FeaturedVideos(): JSX.Element {
         <p className={clsx('subtitle', styles.subtitle)}>
           Quick and informative video covering features and best practices
         </p>
-		{/* Add the link here */}
+        {/* Add the link here */}
         <div className={styles.viewAllLink}>
-          <a href="/videos" className={styles.link}>
-			Watch all videos
-			<i className={`fas fa-arrow-right ${styles.arrow}`}></i>
-		</a>
+          <a href={useBaseUrl('/videos')} className={styles.link}>
+            Watch all videos
+            <i className={`fas fa-arrow-right ${styles.arrow}`}></i>
+          </a>
         </div>
         <div className={styles.cards}>
-          {videos.map((category, index) => (
-            <VideoCard key={index} video={category.video} />
+          {videos.map((video, index) => (
+            <VideoCard key={index} video={video} />
           ))}
         </div>
       </div>
@@ -68,7 +63,8 @@ interface VideoCardProps {
 
 function VideoCard({ video }: VideoCardProps): JSX.Element {
   const handleOpenVideo = (): void => {
-    window.open(video.videoUrl, '_blank');
+    const videoPath = useBaseUrl(video.videoUrl);
+    window.open(videoPath, '_blank');
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>): void => {
@@ -87,7 +83,7 @@ function VideoCard({ video }: VideoCardProps): JSX.Element {
         aria-label={`Open ${video.title}`}
       >
         <img
-          src={video.posterUrl}
+          src={useBaseUrl(video.posterUrl)}
           alt={`Thumbnail for ${video.title}`}
           className={styles.videoThumbnail}
         />
@@ -99,3 +95,5 @@ function VideoCard({ video }: VideoCardProps): JSX.Element {
     </div>
   );
 }
+
+
