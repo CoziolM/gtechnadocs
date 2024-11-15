@@ -1,0 +1,1 @@
+(self.webpackChunkgtechnadocs=self.webpackChunkgtechnadocs||[]).push([[5741],{5741:()=>{}}]);
