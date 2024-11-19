@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgtechnadocs=self.webpackChunkgtechnadocs||[]).push([[6834],{4203:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/gtechnadocs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
