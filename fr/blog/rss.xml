@@ -4,10 +4,131 @@
         <title>Explore Our Help Center Blog</title>
         <link>https://coziolm.github.io/gtechnadocs/fr/blog</link>
         <description>Explore Our Help Center Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 19 Nov 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>fr</language>
+        <item>
+            <title><![CDATA[Project Update]]></title>
+            <link>https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update</link>
+            <guid>https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update</guid>
+            <pubDate>Tue, 19 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Current Setup]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="current-setup">Current Setup<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#current-setup" class="hash-link" aria-label="Lien direct vers Current Setup" title="Lien direct vers Current Setup">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus-on-github-pages">Docusaurus on GitHub Pages<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#docusaurus-on-github-pages" class="hash-link" aria-label="Lien direct vers Docusaurus on GitHub Pages" title="Lien direct vers Docusaurus on GitHub Pages">​</a></h3>
+<ul>
+<li>I successfully set up Docusaurus on GitHub Pages to test the platform online instead of just locally.</li>
+<li>I chose GitHub Pages because it was easier than using our servers, especially since <code>devapp.gtechna.net</code> was often down when I tried working with it.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="strapi-installation">Strapi Installation<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#strapi-installation" class="hash-link" aria-label="Lien direct vers Strapi Installation" title="Lien direct vers Strapi Installation">​</a></h3>
+<ul>
+<li>I installed Strapi locally to better understand how it integrates with Docusaurus.</li>
+<li>Strapi runs as a local server on my machine, and I access its admin panel through a browser (<code>http://localhost:1337/admin</code>).</li>
+<li>The project files are on GitHub to share the setup and ensure version control, but the application itself only works locally unless explicitly deployed to a remote server.</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="possible-future-deployment">Possible Future Deployment<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#possible-future-deployment" class="hash-link" aria-label="Lien direct vers Possible Future Deployment" title="Lien direct vers Possible Future Deployment">​</a></h4>
+<ul>
+<li>While I’m currently running Strapi locally, it can be deployed to a shared server or cloud platform (e.g., AWS, DigitalOcean) for team-wide access.</li>
+<li>Considerations:<!-- -->
+<ul>
+<li>Documentation for some clients will be hosted on-premise and for others on our AWS environment.</li>
+<li>This may introduce complexities depending on where Strapi is hosted.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bridge-script">Bridge Script<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#bridge-script" class="hash-link" aria-label="Lien direct vers Bridge Script" title="Lien direct vers Bridge Script">​</a></h3>
+<ul>
+<li>I wrote a JavaScript script that acts as a bridge between Strapi and Docusaurus.</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="what-the-script-does">What the Script Does<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#what-the-script-does" class="hash-link" aria-label="Lien direct vers What the Script Does" title="Lien direct vers What the Script Does">​</a></h4>
+<ul>
+<li><strong>Fetches content</strong>: It uses Strapi’s API to retrieve the content I manage in Strapi.</li>
+<li><strong>Converts content</strong>: The script converts the data into Markdown files, complete with frontmatter metadata (e.g., title, slug).</li>
+<li><strong>Saves to Docusaurus</strong>: These Markdown files are saved into the appropriate folders in the Docusaurus project.</li>
+<li><strong>Static Site Generation</strong>: Once the files are in place, Docusaurus builds a static site for the documentation.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="key-tools-and-their-roles">Key Tools and Their Roles<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#key-tools-and-their-roles" class="hash-link" aria-label="Lien direct vers Key Tools and Their Roles" title="Lien direct vers Key Tools and Their Roles">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="strapi">Strapi<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#strapi" class="hash-link" aria-label="Lien direct vers Strapi" title="Lien direct vers Strapi">​</a></h3>
+<ul>
+<li><strong>What it is</strong>: A headless CMS, meaning it’s a back-end content manager with no direct connection to the front-end.</li>
+<li><strong>Why I chose it</strong>:<!-- -->
+<ul>
+<li>Good solution for managing multiple versions of content (e.g., English/French) and assets (images, videos).</li>
+<li>Promised WYSIWYG content organization, though it doesn’t fully meet that expectation.</li>
+</ul>
+</li>
+<li><strong>How it works</strong>:<!-- -->
+<ul>
+<li>You define content types (e.g., "documentation pages," "blog posts") in Strapi.</li>
+<li>Map these content types to Docusaurus folders via the bridge script.</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="strapi-workflow">Strapi Workflow<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#strapi-workflow" class="hash-link" aria-label="Lien direct vers Strapi Workflow" title="Lien direct vers Strapi Workflow">​</a></h4>
+<ol>
+<li>Organize Docusaurus folders and scripts.</li>
+<li>Define content types in Strapi.</li>
+<li>Write and maintain the bridge script to connect the two.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus">Docusaurus<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#docusaurus" class="hash-link" aria-label="Lien direct vers Docusaurus" title="Lien direct vers Docusaurus">​</a></h3>
+<ul>
+<li><strong>What it is</strong>: A static site generator that builds the front-end documentation site.</li>
+<li><strong>Plugins</strong>:<!-- -->
+<ul>
+<li><strong>i18n (Internationalization)</strong>:<!-- -->
+<ul>
+<li>Handles translations by associating content with language-specific versions.</li>
+<li>Requires properly structured content.</li>
+</ul>
+</li>
+<li><strong>Algolia Search</strong>:<!-- -->
+<ul>
+<li>Enhances search functionality by indexing your documentation and returning relevant results.</li>
+<li>Setup involves:<!-- -->
+<ul>
+<li>Creating an account with Algolia.</li>
+<li>Configuring their crawler for your site.</li>
+<li>Adding API keys and configuration files.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="challenges-and-complexities">Challenges and Complexities<a href="https://coziolm.github.io/gtechnadocs/fr/blog/2024/11/19/project-update#challenges-and-complexities" class="hash-link" aria-label="Lien direct vers Challenges and Complexities" title="Lien direct vers Challenges and Complexities">​</a></h2>
+<ul>
+<li>
+<p><strong>Iterative Content Structure</strong>:<br>
+<!-- -->One challenge is that the content isn’t fully developed yet, making it hard to plan the structure in advance. As the content evolves, the bridge script will likely need several iterations to accommodate changes.</p>
+</li>
+<li>
+<p><strong>Managing Multiple Documentation Versions</strong>:<br>
+<!-- -->We discussed creating different versions of the documentation website for specific clients or internal use, rather than managing content display through roles.</p>
+<ul>
+<li><strong>Strapi</strong>: Needs a clear system to classify content (e.g., tags or fields for version or client).</li>
+<li><strong>Bridge Script</strong>: Must dynamically fetch and organize content for each version, increasing complexity.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sidebar Automation</strong>:<br>
+<!-- -->The content of the sidebars in Docusaurus isn’t as automated as it could be. For now, I have to define the sidebar manually, which adds some extra overhead. I’m sure this feels minor to a developer, but to me, writing scripts is not like breathing!</p>
+</li>
+<li>
+<p><strong>Algolia Search Setup</strong>:<br>
+<!-- -->Setting up Algolia is an involved process. While I might be able to configure it on the current setup with GitHub Pages, it’s complex enough that it should be done by someone with more expertise. Additionally, the setup would need to be redone when we move the site to our servers, making it a task better suited for later in the project timeline.</p>
+</li>
+<li>
+<p><strong>Autonomy vs. Complexity</strong>:<br>
+<!-- -->I’m aiming to stay as independent as possible to avoid delays, but there are limits to my technical capabilities.</p>
+</li>
+</ul>]]></content:encoded>
+            <category>update</category>
+            <category>Docusaurus</category>
+            <category>strapi</category>
+        </item>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://coziolm.github.io/gtechnadocs/fr/blog/welcome</link>
