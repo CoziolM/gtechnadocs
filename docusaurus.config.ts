@@ -170,6 +170,9 @@ const config: Config = {
 		
       ],
     },
+
+
+    // Footer
     footer: {
       style: 'dark',
       links: [

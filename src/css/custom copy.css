@@ -36,9 +36,9 @@
   --DocSearch-Button-Key-box-shadow: none;
 
   /* Font Family */
-  --ifm-font-family-base: 'Open Sans', sans-serif;
+  /*--ifm-font-family-base: 'Poppins', sans-serif;
   --ifm-font-family-monospace: 'Roboto Mono', monospace;
-  --ifm-heading-font-family: 'Poppins SemiBold', sans-serif;
+  --ifm-heading-font-family: 'Poppins SemiBold', sans-serif;*/
 }
 
 [data-theme='dark'] {
@@ -56,6 +56,67 @@
 }
 
 /* Global Typography and Layout */
+
+body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ifm-color-secondary-text);
+}
+
+/*.theme-doc-markdown {
+  font-size: 0.85rem;
+}*/
+
+p {
+  line-height: 1.8;
+  margin-bottom: 1.2rem; /* Space between paragraphs */
+}
+
+ul, ol {
+  margin: 1.2rem 0;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+}
+
+blockquote {
+  line-height: 1.7;
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--ifm-color-primary-light);
+  color: var(--ifm-color-secondary-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+pre, code {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+table {
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th, table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--ifm-link-color);
+}
+
+a:hover {
+  color: var(--ifm-color-primary-light);
+}
 
 strong, b {
   font-weight: 600; /* Adjust this value for semi-bold */
