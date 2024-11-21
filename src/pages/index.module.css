@@ -8,6 +8,13 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  color:#ffffff;
+  background: linear-gradient(135deg, #1E96D3 0%, #0092b2 20%, #04bfbf 60%, #acf0f2 100%);
+}
+
+/* Section heading */
+h2 {
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 996px) {
@@ -23,17 +30,24 @@
 
 /* Support.module.css */
 .supportSection {
-  background-color: #c4edf7;
-  background-image: url('/img/bg_light.png');
-  background-position: 100%;
-  background-size: cover;
-  padding: 5rem 0;
+  background: linear-gradient(135deg, #e0f7fa, #80deea); /* Gradient colors for light mode */
+  padding: 3rem 0 5rem 0;
   text-align: center;
   color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] .supportSection {
+  background: linear-gradient(135deg, #223275, #132042) !important; /* Gradient colors for dark mode */
+  color: var(--ifm-color-primary-lighter) !important;
 }
 
 .supportSection h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+.highlightedText {
+  color: #0b384f    ; /* Adjust to your desired color */
+  font-weight: bold; /* Optional: Make it bold */
 }
 

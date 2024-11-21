@@ -149,7 +149,16 @@ const config: Config = {
           position: 'left',
           label: 'PlateSentry',
         },
-		{
+
+      {
+        to: '/blog',
+        label: 'Project Updates',
+        position: 'left',
+        className: 'custom-blog-link',
+      },
+
+
+  {
 		type: 'search', // Add the search bar
 		position: 'right', // Position it on the right
 		className: 'searchbar',
@@ -246,7 +255,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © gtechna ${new Date().getFullYear()} | Privacy Policy`,
+      copyright: `Copyright © gtechna ${new Date().getFullYear()} | Privacy Policy`
     },
     prism: {
       theme: prismThemes.github,

@@ -35,13 +35,16 @@ function NewSection() {
 }
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
+        <h1 className="hero__title">
+          Explore Our{' '}
+          <span className={styles.highlightedText}>
+            Help Center
+          </span>
+        </h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
       </div>
     </header>
@@ -50,7 +53,7 @@ function HomepageHeader() {
 
 export default function Home(): JSX.Element {
   return (
-    <Layout title={`gtechnaDOCS`} description="Description will go into a meta tag in <head />">
+    <Layout title={`gtechnaDOCS`} description="Help Center <head />">
       <HomepageHeader />
       <main>
         {/* Commented out NewSection */}

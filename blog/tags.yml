@@ -17,3 +17,13 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+strapi:
+  label: strapi
+  permalink: /strapi
+  description: strapi tag description
+
+update:
+  label: update
+  permalink: /update
+  description: update tag description

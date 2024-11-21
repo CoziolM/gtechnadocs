@@ -1,17 +1,34 @@
 /* src/components/Button/Button.module.css */
 .button {
+  all: unset; /* Reset all inherited styles */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   background-color: var(--ifm-color-primary);
   color: var(--ifm-color-white);
-  padding: 0.75rem 2rem;
-  border: none;
+  padding: 0.5rem 2rem;
   border-radius: 3rem;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s;
+  text-decoration: none; /* Explicitly reset */
 }
 
 .button:hover {
-  background-color: var(--ifm-color-primary-light);
+  background-color: var(--ifm-color-primary-dark);
 }
 
+a {
+  text-decoration: none !important;
+}
+
+[data-theme='dark'] {
+  .button {
+    background-color:var(--ifm-color-primary-light);
+  }
+
+  .button:hover {
+    background-color: var(--ifm-color-primary-lighter);
+  }
+
+}
 

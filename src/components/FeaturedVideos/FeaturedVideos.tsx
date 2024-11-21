@@ -70,17 +70,15 @@ const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
   const videoPath = useBaseUrl(video.videoUrl);
   const posterPath = useBaseUrl(video.posterUrl || '/videos/thumbnails/default_thumbnail.png');
 
-  const handleOpenVideo = () => {
-    window.open(videoPath, '_blank');
-  };
-
   return (
-    <div className={styles.card}>
-      <button
-        className={styles.videoPlayer}
-        onClick={handleOpenVideo}
-        aria-label={`Open ${video.title}`}
-      >
+    <a
+      href={videoPath}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.card}
+      aria-label={`Open ${video.title}`}
+    >
+      <div className={styles.videoPlayer}>
         <img
           src={posterPath}
           alt={`Thumbnail for ${video.title}`}
@@ -89,9 +87,9 @@ const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
         <div className={styles.playButton}>
           <i className="fas fa-play-circle"></i>
         </div>
-      </button>
+      </div>
       <h4 className={styles.videoTitle}>{video.title}</h4>
-    </div>
+    </a>
   );
 };
 

@@ -1,0 +1,32 @@
+  .metadata {
+      display: flex;
+      align-items: center;
+      gap: 4px; /* Reduce the gap to save space */
+      flex-wrap: nowrap; /* Prevent wrapping */
+      margin: 8px 0;
+      font-size: 0.9rem;
+      color: var(--ifm-color-secondary-text);
+      overflow: hidden; /* Avoid overflow issues */
+      text-overflow: ellipsis; /* Add ellipsis for clipped content */
+      white-space: nowrap; /* Force single-line display */
+  }
+
+  
+
+  
+  .author {
+    font-weight: 500;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+  
+  /**
+    Blog post title should be smaller on smaller devices
+  **/
+  @media (max-width: 576px) {
+    .title {
+      font-size: 2rem;
+    }
+  }
