@@ -212,8 +212,13 @@ a:hover {
   height: auto;
 }
 
+.navbar__search {
+  order: 9; /* Adjust the number to control the position */
+  padding-left: 0rem !important;
+}
+
 /* Adjust the navbar to display the mobile menu at the desired breakpoint */
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
   /* Hide the navbar items */
   .navbar__item {
     display: none;
@@ -224,7 +229,7 @@ a:hover {
   }
 }
 
-@media (min-width: 1251px) {
+@media (min-width: 1201px) {
   /* Show the navbar items */
   .navbar__item {
     display: flex;
