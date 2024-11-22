@@ -4,13 +4,18 @@
  */
 
 .heroBanner {
-  padding: 2rem 0;
+  padding: 3rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
   color:#ffffff;
   background: linear-gradient(135deg, #1E96D3 0%, #0092b2 20%, #04bfbf 60%, #acf0f2 100%);
 }
+
+.heroBanner p {
+  margin-bottom: 1rem;
+}
+
 
 /* Section heading */
 h2 {
@@ -31,7 +36,7 @@ h2 {
 /* Support.module.css */
 .supportSection {
   background: linear-gradient(135deg, #e0f7fa, #80deea); /* Gradient colors for light mode */
-  padding: 3rem 0 5rem 0;
+  padding: 3rem 0 3rem 0;
   text-align: center;
   color: var(--ifm-color-primary-darkest);
 }

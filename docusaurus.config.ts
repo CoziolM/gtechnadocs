@@ -2,7 +2,6 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
@@ -33,11 +32,11 @@ const config: Config = {
 	  locales: ['en', 'fr'],
 	  localeConfigs: {
 		en: {
-		  label: 'English',
+		  label: 'En',
 		  direction: 'ltr', // Left-to-right, optional if not needed
 		},
 		fr: {
-		  label: 'Français',
+		  label: 'Fr',
 		  direction: 'ltr', // Left-to-right, optional if not needed
 		},
 	  },
@@ -101,55 +100,46 @@ const config: Config = {
 	},
 	
 	// Top Navigation Bar Configuration	
-    navbar: {
-      //title: 'My Site',
-      logo: {
-        alt: 'gtechnadocs',
-        src: 'img/logo.svg',
-        srcDark: 'img/logo-dark.svg', // Dark mode logo
+  navbar: {
+    logo: {
+      alt: 'gtechnadocs',
+      src: 'img/logo.svg',
+      srcDark: 'img/logo-dark.svg',
+    },
+    items: [
+      {
+        type: 'docSidebar',
+        sidebarId: 'commandcenterSidebar',
+        position: 'left',
+        label: 'Command Center',
       },
-      items: [
-		
-		{
-          type: 'docSidebar',
-          sidebarId: 'commandcenterSidebar',
-          position: 'left',
-          label: 'Command Center',
-        },
-		
-		{
-          type: 'dropdown',
-          label: 'Modules',
-          position: 'left',
-          items: [
-            {
-              label: 'Module 1',
-			  sidebarId: 'module1Sidebar',
-              to: '/docs/command-center/modules/module1',
-            },
-            {
-              label: 'Module 2',
-			  sidebarId: 'module2Sidebar',
-              to: '/docs/command-center/modules/module2',
-            },
-            // ... more items
-          ],
-        },
-		
-		{
-          type: 'docSidebar',
-          sidebarId: 'permitsSidebar',
-          position: 'left',
-          label: 'Permits',
-        },
-		
-		{
-          type: 'docSidebar',
-          sidebarId: 'platesentrySidebar',
-          position: 'left',
-          label: 'PlateSentry',
-        },
-
+      {
+        type: 'dropdown',
+        label: 'Modules',
+        position: 'left',
+        items: [
+          {
+            label: 'Module 1',
+            to: '/docs/command-center/modules/module1',
+          },
+          {
+            label: 'Module 2',
+            to: '/docs/command-center/modules/module2',
+          },
+        ],
+      },
+      {
+        type: 'docSidebar',
+        sidebarId: 'permitsSidebar',
+        position: 'left',
+        label: 'Permits',
+      },
+      {
+        type: 'docSidebar',
+        sidebarId: 'platesentrySidebar',
+        position: 'left',
+        label: 'PlateSentry',
+      },
       {
         to: '/blog',
         label: 'Project Updates',
@@ -157,19 +147,19 @@ const config: Config = {
         className: 'custom-blog-link',
       },
 
-
-  {
-		type: 'search', // Add the search bar
-		position: 'right', // Position it on the right
-		className: 'searchbar',
-		},
-		{
-		type: 'localeDropdown',
+      {
+        type: 'localeDropdown',
         position: 'right',
-        },
-		
-      ],
-    },
+        className: 'navbar__locale',
+      },
+      {
+        type: 'search',
+        position: 'right',
+        className: 'navbar__search',
+      },
+    ],
+  },
+  
 
 
     // Footer

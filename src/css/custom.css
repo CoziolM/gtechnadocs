@@ -39,6 +39,9 @@
   --ifm-font-family-base: 'Open Sans', sans-serif;
   --ifm-font-family-monospace: 'Roboto Mono', monospace;
   --ifm-heading-font-family: 'Poppins SemiBold', sans-serif;
+
+  /* Breakpoint */
+  --ifm-breakpoint-md: 1200px !important; /* Adjust the value as needed */
 }
 
 [data-theme='dark'] {
@@ -145,22 +148,42 @@ a:hover {
 
 /* Custom Styles for Pill Button */
 .navbar__link.custom-blog-link {
-  display: inline-block;
-  padding: 0.3rem 1.5rem;
-  background-color: var(--ifm-color-primary);
-  color: #ffffff;
-  border-radius: 3rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  margin-left: 1rem;
-  font-weight: 500 !important;
-  font-size: 0.9em;
+  color: var(--ifm-color-primary);
 }
 
 .navbar__link.custom-blog-link:hover {
-  background-color: var(--ifm-color-primary-dark);
-  color: #ffffff;
+  color: var(--ifm-color-primary-darkest);
 }
+
+.navbar__link {
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Style the localization dropdown */
+.navbar__locale {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.navbar__locale-select {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.navbar__locale-select:focus {
+  outline: none;
+}
+
+.navbar__locale svg {
+  margin-right: 0.5em;
+  width: 1em;
+  height: 1em;
+}
+
 
 /* Responsive Design */
 @media (max-width: 576px) {
@@ -176,5 +199,38 @@ a:hover {
   div[role="banner"] .announcementBarContent {
     padding: 15px;
     font-size: 0.9em;
+  }
+}
+
+/* Prevent the logo from shrinking */
+.logo {
+  flex-shrink: 0;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjust the navbar to display the mobile menu at the desired breakpoint */
+@media (max-width: 1250px) {
+  /* Hide the navbar items */
+  .navbar__item {
+    display: none;
+  }
+  /* Show the hamburger menu */
+  .navbar__toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 1251px) {
+  /* Show the navbar items */
+  .navbar__item {
+    display: flex;
+  }
+  /* Hide the hamburger menu */
+  .navbar__toggle {
+    display: none;
   }
 }
